@@ -1,15 +1,16 @@
-import { useRecipeStore } from '../stores/ReciepeStore';
+import { useRecipeStore } from '../stores/recipeStore';
 
-const RecipeList = () => {
-    const recieps = useRecipeStore(state => state.recieps);  
-    return(
-        <div>
-            {recieps.map(recipe => (
-                <div key={recipe.id}>
-                    <h3>{recieps.title}</h3>
-                    <p>{recieps.description}</p>
-                </div>
-            ))},
-        </div>
+  const RecipeList = () => {
+    const recipes = useRecipeStore(state => state.recipes);
+
+    return (
+      <div>
+        {recipes.map(recipe => (
+          <div key={recipe.id}>
+            <h3>{recipe.title}</h3>
+            <p>{recipe.description}</p>
+          </div>
+        ))}
+      </div>
     );
-};
+  };
