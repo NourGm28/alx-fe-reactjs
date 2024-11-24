@@ -4,6 +4,8 @@ import RecipeList from './RecipeList';
 import RecipeDetails from './RecipeDetails';
 import AddRecipeForm from './AddRecipeForm';
 import SearchBar from './SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList'
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
         <h1>Recipe Sharing App</h1>
         <SearchBar />
         <Routes>
+        <Route path="/" element={<FavoritesList />} />
+        <Route path="/" element={<RecommendationsList />} />
           <Route path="/" element={<RecipeList />} />
           <Route path="/add" element={<AddRecipeForm />} />
           <Route path="/recipes/:id" element={<RecipeDetailsWrapper />} />
