@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <h1>RecipeStore</h1>
-        <RecipeList />
         <AddRecipeForm />
+        <RecipeList />
     </>
   )
 }
