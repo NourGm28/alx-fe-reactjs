@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/recipe/:id" element={<RecipeDetail />} />
+          <Route path="/submit" element={<RecipeForm />} />
         </Routes>
       </Router>
     </>

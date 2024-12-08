@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 export default function HomePage() {
     const [data, setData] = useState([]);
 
-    const RecipeCard = ({ recdata }) => (
-        <div className="border rounded p-4">
-        <h3 className="text-xl font-bold">{recdata.title}</h3>
-        <img src={recdata.image} alt={recdata.title} className="w-full h-48 object-cover rounded mb-2" />
-        <Link to={`/src/data.json/${recdata.id}`} className="text-blue-500 underline">
-            View Details
-        </Link>
-        </div>
-    );
+    // const RecipeCard = ({ recdata }) => (
+    //     <div className="border rounded p-4">
+    //     <h3 className="text-xl font-bold">{recdata.title}</h3>
+    //     <img src={recdata.image} alt={recdata.title} className="w-full h-48 object-cover rounded mb-2" />
+    //     <Link to={`/src/data.json/${recdata.id}`} className="text-blue-500 underline">
+    //         View Details
+    //     </Link>
+    //     </div>
+    // );
 
     useEffect(() => {
             fetch('/src/data.json')
