@@ -27,7 +27,7 @@ const PostsComponent = () => {
 
   // Error state
   if (isError) return <p>Error: {error.message}</p>;
-
+  "keepPreviousData"
   // Render fetched posts
   return (
     <div>
