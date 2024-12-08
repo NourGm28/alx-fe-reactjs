@@ -10,7 +10,10 @@ const RecipeForm = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const validateForm = () => {
@@ -29,15 +32,14 @@ const RecipeForm = () => {
     if (Object.keys(validationErrors).length === 0) {
       console.log('Form submitted:', formData);
       alert('Recipe submitted successfully!');
-      // Reset the form
-      setFormData({ title: '', ingredients: '', steps: '' });
+      setFormData({ title: '', ingredients: '', steps: '' }); // Reset form
     } else {
       setErrors(validationErrors);
     }
   };
 
   return (
-    <div className="container mx-auto p-6 max-w-lg w-full">
+    <div className="container mx-auto p-6 max-w-lg">
       <h1 className="text-3xl font-bold text-center mb-6">Submit a Recipe</h1>
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 py-6">
         {/* Recipe Title */}
@@ -99,4 +101,14 @@ const RecipeForm = () => {
         <div className="text-center">
           <button
             type="submit"
-        }
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Submit Recipe
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default RecipeForm;
