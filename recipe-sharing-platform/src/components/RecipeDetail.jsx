@@ -21,7 +21,7 @@ const RecipeDetail = () =>  {
 
 
     return (
-        <div>
+        <div className='container shadow-lg bg-white p-2 m-2'>
             <h1>{recdata.title}</h1>
             <img 
             src={recdata.image}

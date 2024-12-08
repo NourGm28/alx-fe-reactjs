@@ -8,7 +8,7 @@ export default function HomePage() {
         <div className="border rounded p-4">
         <h3 className="text-xl font-bold">{recdata.title}</h3>
         <img src={recdata.image} alt={recdata.title} className="w-full h-48 object-cover rounded mb-2" />
-        <Link to={`/recipe/${recdata.id}`} className="text-blue-500 underline">
+        <Link to={`/src/data.json/${recdata.id}`} className="text-blue-500 underline">
             View Details
         </Link>
         </div>
