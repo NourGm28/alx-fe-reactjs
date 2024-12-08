@@ -11,7 +11,7 @@ export default function HomePage() {
             .catch(err => console.error('error loading data',err));
             }, []);
             return (
-                <div className="container bg-slate-300 p-5 m-3 grid grid-cols-3 gap-4 shad shadow-lg">
+                <div className="container bg-slate-300 p-5 m-3 grid-cols-1 grid-cols-2, sm shadow-lg">
                     <h1 className="hover:text-orange-800">Recipes Sharing Platform </h1>
                     <div className="p-4 m-4">
                         {data.map(item =>(
