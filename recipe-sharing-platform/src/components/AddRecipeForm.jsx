@@ -9,7 +9,7 @@ const RecipeForm = () => {
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target.value;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
