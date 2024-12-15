@@ -78,10 +78,10 @@ function Search ({onSearch}) {
             </div>
           ))}
         </div>
-        {userData && (
+        {userData (
             <div>
                 <img src={userData.avatar_url} alt={`${userData.login} avatar`} />
-                <h2>{userData.name || userData.login}</h2>
+                <h2>{userData.name}</h2>
                 <a href={userData.html_url} target='_blank' rel='noopener noreferrer'>
                     Visit Profile
                 </a>
