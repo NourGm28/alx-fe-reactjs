@@ -19,7 +19,7 @@ function Search ({onSearch}) {
         setLoading(true);
         setError('');
         try {
-          const users = await fetchUsers({ ...filters });
+          const users = await fetchUserData({ ...filters });
           setResults(users);
         } catch (err) {
           setError('looks like we cant find the user');
@@ -91,7 +91,7 @@ function Search ({onSearch}) {
         const loadMore = async () => {
             setLoading(true);
             try {
-              const newResults = await fetchUsers({ ...filters, page: page + 1 });
+              const newResults = await fetchUserData({ ...filters, page: page + 1 });
               setResults((prevResults) => [...prevResults, ...newResults]);
               setPage(page + 1);
             } catch (err) {
