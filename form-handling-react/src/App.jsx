@@ -1,10 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { PostsComponent } from './components/PostsComponent'; 
+
+
+// Components
+function Home() {
+  return <h2>Home Page</h2>;
+}
+
+function About() {
+  return <h2>About Us</h2>;
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const queryClient = new QueryClient();
 
   return (
     <>
@@ -28,8 +42,18 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      {/* Define Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <QueryClientProvider client={queryClient}>
+      <PostsComponent />
+    </QueryClientProvider>
     </>
-  )
+  );
 }
 
-export default App
+
+export default App;
